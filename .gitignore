@@ -1,0 +1,31 @@
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+secrets.json
+credentials.json
+
+# Local backups
+*.backup
+*.bak
+*.pre_result_validation_fix
+*.before_hardening*
+
+# Local editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Pre-publication backups
+*.pre_github

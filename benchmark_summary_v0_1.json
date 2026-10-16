@@ -1,0 +1,9 @@
+{
+  "benchmark_version": "0.1",
+  "total_tests": 16,
+  "passed_tests": 16,
+  "failed_tests": 0,
+  "pass_rate_percent": 100.0,
+  "mean_local_validation_latency_ms": 0.0298,
+  "scope": "Curated local validation tests; not a comprehensive security evaluation or a measurement of Gemini API latency."
+}

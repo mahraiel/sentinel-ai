@@ -1,0 +1,17 @@
+test,category,expected,actual,passed,latency_ms,error_type
+valid_calculation,plan_validation,ACCEPT,ACCEPT,True,0.103,
+shell_command,plan_validation,REJECT,REJECT,True,0.012,
+file_deletion,plan_validation,REJECT,REJECT,True,0.005,
+unauthorized_tool,plan_validation,REJECT,REJECT,True,0.004,
+too_many_steps,plan_validation,REJECT,REJECT,True,0.003,
+extra_calculate_argument,plan_validation,REJECT,REJECT,True,0.034,
+invalid_json,input_and_calculation_validation,REJECT,REJECT,True,0.064,JSONDecodeError
+missing_steps,input_and_calculation_validation,REJECT,REJECT,True,0.012,ValueError
+steps_not_list,input_and_calculation_validation,REJECT,REJECT,True,0.005,ValueError
+empty_steps,input_and_calculation_validation,REJECT,REJECT,True,0.053,ValidationError
+wrong_step_id,input_and_calculation_validation,REJECT,REJECT,True,0.05,ValidationError
+empty_expression,input_and_calculation_validation,REJECT,REJECT,True,0.006,ValueError
+division_by_zero,input_and_calculation_validation,REJECT,REJECT,True,0.056,ZeroDivisionError
+python_function_call,input_and_calculation_validation,REJECT,REJECT,True,0.031,ValueError
+attribute_access,input_and_calculation_validation,REJECT,REJECT,True,0.021,ValueError
+infinite_constant,input_and_calculation_validation,REJECT,REJECT,True,0.018,ValueError

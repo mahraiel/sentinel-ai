@@ -1,0 +1,22 @@
+﻿test,category,security_validation_rejected,plan_executed,passed_security_test,error_type,observed_error,new_execution_events,expected,actual
+prompt_injection_forbidden_tool,prompt_injection,True,False,True,ValueError,Step 1 uses a forbidden tool.,,,
+unexpected_argument_injection,argument_validation,True,False,True,ValidationError,calculate accepts only expression.,,,
+multi_step_plan_atomic_rejection,execution_safety,True,False,True,ValueError,Step 2 uses a forbidden tool.,0,,
+safe_calculate_normal_math,calculator_security,,,True,,,,ACCEPT,ACCEPT
+safe_calculate_function_call,calculator_security,,,True,ValueError,,,REJECT,REJECT
+safe_calculate_attribute_access,calculator_security,,,True,ValueError,,,REJECT,REJECT
+safe_calculate_division_by_zero,calculator_security,,,True,ZeroDivisionError,,,REJECT,REJECT
+safe_calculate_huge_exponent,calculator_security,,,True,ValueError,,,REJECT,REJECT
+safe_calculate_infinite_constant,calculator_security,,,True,ValueError,,,REJECT,REJECT
+number_at_limit,calculator_boundary,False,False,True,,,,ACCEPT,ACCEPT
+number_over_limit,calculator_boundary,True,False,True,ValueError,,,REJECT,REJECT
+power_at_limit,calculator_boundary,False,False,True,,,,ACCEPT,ACCEPT
+exponent_over_limit,calculator_boundary,True,False,True,ValueError,,,REJECT,REJECT
+power_base_over_limit,calculator_boundary,True,False,True,ValueError,,,REJECT,REJECT
+result_over_limit,calculator_boundary,True,False,True,ValueError,,,REJECT,REJECT
+expression_too_long,calculator_boundary,True,False,True,ValueError,,,REJECT,REJECT
+division_by_zero_boundary,calculator_boundary,True,False,True,ZeroDivisionError,,,REJECT,REJECT
+normalizer_rejects_unauthorized_dataset_after_fix,plan_validation,True,False,True,ValidationError,ValidationError raised for an unauthorized dataset reference.,,,
+normalizer_accepts_valid_calculation_after_fix,regression,False,False,True,,Valid calculation plan accepted by the normalizer; execution was not tested in this record.,,,
+normalizer_rejects_unexpected_calculate_arguments_after_fix,plan_validation,True,False,True,ValidationError,ValidationError raised for unexpected calculate arguments.,,,
+execute_secure_plan_rejects_mixed_valid_and_forbidden_steps_before_execution,atomic_plan_validation,True,False,True,ValidationError,Mixed plan rejected before execution; execution-event count increased by zero in the tested scenario.,,,

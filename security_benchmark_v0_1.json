@@ -1,0 +1,194 @@
+[
+  {
+    "test": "prompt_injection_forbidden_tool",
+    "category": "prompt_injection",
+    "security_validation_rejected": true,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": "ValueError",
+    "observed_error": "Step 1 uses a forbidden tool."
+  },
+  {
+    "test": "unexpected_argument_injection",
+    "category": "argument_validation",
+    "security_validation_rejected": true,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": "ValidationError",
+    "observed_error": "calculate accepts only expression."
+  },
+  {
+    "test": "multi_step_plan_atomic_rejection",
+    "category": "execution_safety",
+    "security_validation_rejected": true,
+    "plan_executed": false,
+    "new_execution_events": 0,
+    "passed_security_test": true,
+    "error_type": "ValueError",
+    "observed_error": "Step 2 uses a forbidden tool."
+  },
+  {
+    "test": "safe_calculate_normal_math",
+    "category": "calculator_security",
+    "expected": "ACCEPT",
+    "actual": "ACCEPT",
+    "passed_security_test": true,
+    "error_type": null
+  },
+  {
+    "test": "safe_calculate_function_call",
+    "category": "calculator_security",
+    "expected": "REJECT",
+    "actual": "REJECT",
+    "passed_security_test": true,
+    "error_type": "ValueError"
+  },
+  {
+    "test": "safe_calculate_attribute_access",
+    "category": "calculator_security",
+    "expected": "REJECT",
+    "actual": "REJECT",
+    "passed_security_test": true,
+    "error_type": "ValueError"
+  },
+  {
+    "test": "safe_calculate_division_by_zero",
+    "category": "calculator_security",
+    "expected": "REJECT",
+    "actual": "REJECT",
+    "passed_security_test": true,
+    "error_type": "ZeroDivisionError"
+  },
+  {
+    "test": "safe_calculate_huge_exponent",
+    "category": "calculator_security",
+    "expected": "REJECT",
+    "actual": "REJECT",
+    "passed_security_test": true,
+    "error_type": "ValueError"
+  },
+  {
+    "test": "safe_calculate_infinite_constant",
+    "category": "calculator_security",
+    "expected": "REJECT",
+    "actual": "REJECT",
+    "passed_security_test": true,
+    "error_type": "ValueError"
+  },
+  {
+    "test": "number_at_limit",
+    "category": "calculator_boundary",
+    "expected": "ACCEPT",
+    "actual": "ACCEPT",
+    "security_validation_rejected": false,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": null
+  },
+  {
+    "test": "number_over_limit",
+    "category": "calculator_boundary",
+    "expected": "REJECT",
+    "actual": "REJECT",
+    "security_validation_rejected": true,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": "ValueError"
+  },
+  {
+    "test": "power_at_limit",
+    "category": "calculator_boundary",
+    "expected": "ACCEPT",
+    "actual": "ACCEPT",
+    "security_validation_rejected": false,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": null
+  },
+  {
+    "test": "exponent_over_limit",
+    "category": "calculator_boundary",
+    "expected": "REJECT",
+    "actual": "REJECT",
+    "security_validation_rejected": true,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": "ValueError"
+  },
+  {
+    "test": "power_base_over_limit",
+    "category": "calculator_boundary",
+    "expected": "REJECT",
+    "actual": "REJECT",
+    "security_validation_rejected": true,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": "ValueError"
+  },
+  {
+    "test": "result_over_limit",
+    "category": "calculator_boundary",
+    "expected": "REJECT",
+    "actual": "REJECT",
+    "security_validation_rejected": true,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": "ValueError"
+  },
+  {
+    "test": "expression_too_long",
+    "category": "calculator_boundary",
+    "expected": "REJECT",
+    "actual": "REJECT",
+    "security_validation_rejected": true,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": "ValueError"
+  },
+  {
+    "test": "division_by_zero_boundary",
+    "category": "calculator_boundary",
+    "expected": "REJECT",
+    "actual": "REJECT",
+    "security_validation_rejected": true,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": "ZeroDivisionError"
+  },
+  {
+    "test": "normalizer_rejects_unauthorized_dataset_after_fix",
+    "category": "plan_validation",
+    "security_validation_rejected": true,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": "ValidationError",
+    "observed_error": "ValidationError raised for an unauthorized dataset reference."
+  },
+  {
+    "test": "normalizer_accepts_valid_calculation_after_fix",
+    "category": "regression",
+    "security_validation_rejected": false,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": null,
+    "observed_error": "Valid calculation plan accepted by the normalizer; execution was not tested in this record."
+  },
+  {
+    "test": "normalizer_rejects_unexpected_calculate_arguments_after_fix",
+    "category": "plan_validation",
+    "security_validation_rejected": true,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": "ValidationError",
+    "observed_error": "ValidationError raised for unexpected calculate arguments."
+  },
+  {
+    "test": "execute_secure_plan_rejects_mixed_valid_and_forbidden_steps_before_execution",
+    "category": "atomic_plan_validation",
+    "security_validation_rejected": true,
+    "plan_executed": false,
+    "passed_security_test": true,
+    "error_type": "ValidationError",
+    "observed_error": "Mixed plan rejected before execution; execution-event count increased by zero in the tested scenario."
+  }
+]
